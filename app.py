@@ -27,7 +27,7 @@ def home():
             if amount > old_balance:
                 message = f"You're broke, you only have ${old_balance:.2f} lol. Go ask your mom for money."
             else:
-                message = f"You withdrew ${amount:.2f} and now have a balance of ${account.balance:.2f}"
+                message = f"Withdrew ${amount:.2f} successfully!"
         session["balance"] = account.balance
 
     return render_template(
