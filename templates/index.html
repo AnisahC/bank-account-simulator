@@ -6,6 +6,10 @@
 <body>
   <h1>Welcome, {{ name }}</h1>
   <p>Current Balance: ${{ balance }}</p>
+  
+  {% if message %}
+    <p><strong>{{ message }}</strong></p>
+  {% endif %}
 
   <h2>Make a Transaction</h2>
 

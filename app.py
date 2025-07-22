@@ -17,8 +17,14 @@ def home():
 
         if action == "deposit":
             account.deposit(amount)
+            message = f"Deposited ${amount:.2f} successfully!"
         elif action == "withdraw":
+            old_balance = account.balance
             account.withdraw(amount)
+            if amount > old_balance:
+                message = f"You're broke, you only have {old_balance} lol. Go ask your mom for {amount}."
+            else:
+                message = f"You withdrew {amount} and now have a balance of {account.balance}"
 
     return render_template(
         "index.html",
