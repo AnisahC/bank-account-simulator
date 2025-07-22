@@ -9,7 +9,6 @@ account = CheckingAccount("Anisah", 1000)
 @app.route('/', methods = ["GET", "POST"])
 def home():
     global account
-    message = None
 
     # Handle deposit
     if request.method == "POST":
@@ -30,8 +29,7 @@ def home():
     return render_template(
         "index.html",
         name=account.name,
-        balance=account.balance,
-        message = message
+        balance=account.balance
     )
 
 if __name__ == "__main__":
