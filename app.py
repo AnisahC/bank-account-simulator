@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from checking_account import CheckingAccount
+# session key code: b314084c979420569728f11e1689a9a2
 
 app = Flask(__name__)
 app.secret_key = "dev-secret-key"  # still fine for now
