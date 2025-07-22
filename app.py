@@ -4,7 +4,7 @@ from checking_account import CheckingAccount
 app = Flask(__name__)
 app.secret_key = "dev-secret-key"  # still fine for now
 
-account = CheckingAccount("Anisah", 1000)
+account = CheckingAccount("Anisah", 500)
 
 @app.route('/', methods = ["GET", "POST"])
 def home():
