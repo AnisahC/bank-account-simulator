@@ -9,7 +9,7 @@ account = CheckingAccount("Anisah", 500)
 @app.route('/', methods = ["GET", "POST"])
 def home():
     global account
-
+    message = None
     # Handle deposit
     if request.method == "POST":
         action = request.form.get("action")
@@ -22,14 +22,15 @@ def home():
             old_balance = account.balance
             account.withdraw(amount)
             if amount > old_balance:
-                message = f"You're broke, you only have {old_balance} lol. Go ask your mom for {amount}."
+                message = f"You're broke, you only have ${old_balance:.2f} lol. Go ask your mom for money."
             else:
-                message = f"You withdrew {amount} and now have a balance of {account.balance}"
+                message = f"You withdrew ${amount:.2f} and now have a balance of ${account.balance:.2f}"
 
     return render_template(
         "index.html",
         name=account.name,
-        balance=account.balance
+        balance=account.balance,
+        message = message
     )
 
 if __name__ == "__main__":

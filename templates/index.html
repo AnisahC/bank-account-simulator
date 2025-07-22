@@ -5,10 +5,10 @@
 </head>
 <body>
   <h1>Welcome, {{ name }}</h1>
-  <p>Current Balance: ${{ balance }}</p>
+  <p>Current Balance: ${{ "%.2f"|format(balance) }}</p>
   
   {% if message %}
-    <p><strong>hi</strong></p>
+    <p><strong>{{ message }}</strong></p>
   {% endif %}
 
   <h2>Make a Transaction</h2>
